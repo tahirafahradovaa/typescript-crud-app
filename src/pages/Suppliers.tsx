@@ -94,7 +94,13 @@ function Suppliers() {
                       <td>{item.contactTitle}</td>
                       <td>
                         <button
-                          onClick={() => setIsClicked(!isClicked)}
+                          onClick={() => {
+                            if (localStorage.getItem("name")) {
+                              setIsClicked(!isClicked);
+                            } else {
+                              alert("PLEASE LOG IN FIRST");
+                            }
+                          }}
                           className="updateBtn"
                         >
                           Update
