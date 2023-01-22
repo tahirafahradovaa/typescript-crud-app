@@ -17,7 +17,7 @@ function Products(): ReactJSXElement {
     productService.getAll().then((res) => {
       setProducts(res.data);
     });
-  });
+  }, []);
 
   const deleteHandler = (id: number) => {
     if (localStorage.getItem("name")) {
